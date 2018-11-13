@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const request = require('request');
 const fs = require('fs');
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 
 hbs.registerPartials('C:/Users/Smokey/Desktop/web2520/lab9/views')
@@ -87,6 +89,6 @@ app.get('/404', (request, response) => {
 
 
 
-app.listen(8082, () => {
-	console.log('Server is up on the port 8082');
+app.listen(port, () => {
+	console.log(`Server is up on the port ${port}`);
 });
