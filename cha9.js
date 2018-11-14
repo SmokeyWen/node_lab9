@@ -42,9 +42,16 @@ app.use((request, response, next) => {
 		}
 	});
 	next();
-},(request, response, next) => {
-	response.render("index.html");
 });
+
+// ,(request, response, next) => {
+// 	response.render("index.hbs")
+// });
+app.use((request, response, next) => {
+	response.render('index.hbs', {
+		time: new Date()
+	});
+})
 
 hbs.registerHelper('challenge', (text) => {
 	return text.toLowerCase();
